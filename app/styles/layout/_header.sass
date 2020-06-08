@@ -1,5 +1,66 @@
+.header
+  padding-top: 30px
+  &__content
+    display: flex
+    align-items: center
+    margin-bottom: 24px
+  &__social
+    display: flex
+    margin: 0 10px 0 auto
+    &-link      
+      width: 40px
+      height: 40px
+      margin: 0 5px
+      transition: 0.3s
+      svg 
+        width: 40px
+        height: 40px
+  &__menu 
+    height: 56px
+    width: 100%
+    display: flex
+    margin-bottom: 16px
+    &-link
+      display: flex
+      justify-content: center
+      align-items: center
+      width: 20%
+      background: $brown
+      color: $white
+      +bold   
+      font-size: 14px
+      line-height: 21px
+      text-transform: uppercase
+      letter-spacing: 1px
+      transition: 0.3s
+  &__langs
+    display: flex
+    justify-content: space-between
+    &-item
+      width: 9%
+      transition: 0.3s
+      img 
+        width: 100%
+        opacity: 0.9
+        transition: 0.3s
+      &-title 
+        text-align: center
+        text-transform: uppercase
+        margin: 8px 0
+        color: $black
+        +bold 
+        font-size: 14px
+        transition: 0.3s
 
-      
-          
-      
-
+@media screen and ( max-width: 1400px )
+  .header
+    &__content
+      margin-bottom: 16px
+    &__langs
+      &-item-title
+        font-size: 13px    
+@media screen and ( max-width: 1200px )
+  .header
+    &__langs
+      &-item-title
+        font-size: 11px    
