@@ -1,9 +1,10 @@
 .header
-  padding-top: 30px
+  padding-top: 20px
+  margin-bottom: 24px
   &__content
     display: flex
     align-items: center
-    margin-bottom: 24px
+    margin-bottom: 16px
   &__social
     display: flex
     margin: 0 10px 0 auto
@@ -16,7 +17,7 @@
         width: 40px
         height: 40px
   &__menu 
-    height: 56px
+    height: 50px
     width: 100%
     display: flex
     margin-bottom: 16px
@@ -63,4 +64,23 @@
   .header
     &__langs
       &-item-title
-        font-size: 11px    
+        font-size: 11px 
+@media screen and ( max-width: 992px )
+  .header    
+    margin-bottom: 16px
+    &__social
+      display: none
+    &__button-test
+      margin: 0 10px 0 auto
+    &__langs
+      display: none
+@media screen and ( max-width: 768px )
+  .header
+    padding-top: 16px
+    &__button-test, &__menu
+      display: none
+    &__content
+      margin-bottom: 0              
+@media screen and ( max-width: 576px )
+  .header             
+    padding-top: 8px

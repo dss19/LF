@@ -1,1 +1,1 @@
-"use strict";$(document).ready(function(){});
+"use strict";$(document).ready(function(){new Swiper(".swiper-container-main",{loop:!0,navigation:{nextEl:".main-slider-next",prevEl:".main-slider-prev"}});$(".hamburger").click(function(){$(".hamburger-menu").toggleClass("active"),$(".mobile-menu").toggleClass("active")})});

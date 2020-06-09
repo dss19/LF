@@ -40,7 +40,6 @@ button
   text-transform: uppercase
   letter-spacing: 1px 
   cursor: pointer
-  border-radius: 4px
   transition: 0.3s 
 
 @media screen and ( max-width: 1400px )
@@ -52,7 +51,18 @@ button
 @media screen and ( max-width: 1024px )
   .container
     max-width: none
-    padding: 0 16px            
+    padding: 0 16px
+@media screen and ( max-width: 576px )
+  .container
+    padding: 0 8px
+  .logo
+    &__icon
+      width: 40px
+      height: 40px
+    &__text
+      width: 180px
+      height: 40px  
+                  
 
 
     

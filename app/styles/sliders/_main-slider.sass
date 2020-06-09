@@ -1,0 +1,40 @@
+.main-slider
+  height: 600px
+  position: relative  
+  &__slide
+    display: flex
+    align-items: center
+    text-align: center
+    +bold 
+    font-size: 40px
+    color: $white
+    text-transform: uppercase
+    &_first
+      background: $pink
+    &_second
+      background: #33BD4F
+    &_third
+      background: blue
+    &_thourth
+      background: $red
+  &-buttons
+    display: flex
+    position: absolute
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2    
+  &-prev, &-next
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    background: rgba($white, 0.3)
+    outline: none
+    cursor: pointer
+    svg
+      path
+        transition: 0.3s
+.swiper-container-main
+  height: 100%                

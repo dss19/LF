@@ -1,0 +1,147 @@
+.footer  
+  &-content
+    padding: 60px 0 50px
+    border-top: 2px solid $brown
+    display: flex
+    justify-content: space-between  
+  &-copyrights, &-polici, &-offer
+    display: block
+    +bold 
+    font-size: 16px
+    line-height: 21px
+    color: $brown 
+    margin-top: 16px 
+    transition: 0.3s
+  &-polici, &-offer
+    width: max-content
+    position: relative
+    font-size: 18px
+    &::after
+      position: absolute
+      content: ''
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 1px
+      background: $brown
+      transition: 0.3s
+  &__social
+    &-link
+      display: block
+      width: 40px
+      height: 40px
+      margin-bottom: 8px
+      transition: 0.3s
+      svg 
+        width: 40px
+        height: 40px
+  &-block_right
+    display: flex
+  &__links
+    margin-right: 77px
+    list-style: none
+    li
+      margin-bottom: 15px          
+  &__link
+    +bold
+    color: $brown
+    font-size: 14px
+    line-height: 21px
+    letter-spacing: 0.8px
+    text-transform: uppercase
+    transition: 0.3s
+  &__contacts
+    display: flex
+    flex-direction: column
+    margin-right: 69px
+    &-title
+      +norm
+      text-transform: uppercase
+      font-size: 16px
+      line-height: 24px
+      letter-spacing: 2px
+      color: rgba(37, 37, 37, 0.873613)
+      margin-bottom: 16px
+    &-phone
+      +bold
+      color: $brown
+      font-size: 24px
+      line-height: 24px
+      margin-bottom: 11px
+      transition: 0.3s
+    &-email
+      +bold
+      color: $brown
+      font-size: 24px
+      line-height: 24px
+      margin-bottom: 34px
+      transition: 0.3s
+    &-btn
+      width: 210px
+      height: 45px
+      +bold
+      color: $brown
+      font-size: 16px
+      line-height: 24px
+      letter-spacing: 0.8px
+      display: flex
+      text-align: center
+      align-items: center
+      justify-content: center
+      border: 2px solid $brown
+      transition: 0.3s
+  &-top-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 42px
+    height: 176px
+    background-color: $red
+    border: 2px solid $red
+    padding: 17px 0
+    transition: 0.3s
+    cursor: pointer
+    svg
+      path 
+      fill: $white 
+@media screen and ( max-width: 1400px )
+  .footer
+    &__contacts
+      margin-right: 30px
+    &__links
+      margin-right: 40px             
+@media screen and ( max-width: 1200px )
+  .footer
+    &-copyrights
+      max-width: 230px
+    &-polici, &-offer
+      font-size: 16px  
+    &__contacts
+      margin-right: 30px
+    &__links
+      margin-right: 40px 
+@media screen and ( max-width: 1024px )
+  .footer
+    &-social
+      display: none
+@media screen and ( max-width: 992px )
+  .footer
+    &__links
+      display: none
+@media screen and ( max-width: 768px )
+  .footer
+    &-content
+      display: block
+    &-offer
+      margin-bottom: 16px
+    &-block_right
+      position: relative
+    &-top-btn
+      position: absolute
+      right: 0
+      bottom: 100%
+@media screen and ( max-width: 576px )
+  .footer
+    &-content
+      padding-top: 30px                  
+

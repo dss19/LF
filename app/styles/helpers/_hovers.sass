@@ -14,6 +14,31 @@
       transform: scale(1.1)
       img 
         opacity: 1
+  .main-slider-prev, .main-slider-next
+    &:hover
+      svg 
+        path 
+          fill: $black
+  .footer
+    &-polici, &-offer, &__link
+      &:hover
+        color: $red
+        &::after
+          opacity: 0            
+    &__social-link:hover
+      transform: scale(1.25)
+    &__contacts
+      &-btn:hover
+        background: $brown
+        color: $white
+      &-phone, &-email
+        &:hover
+          color: $red  
+    &-top-btn:hover
+      background: $white
+      svg
+        path                      
+          fill: $red
           
 
   
