@@ -13,5 +13,14 @@ $(document).ready(function () {
   $('.hamburger').click(function () {
     $('.hamburger-menu').toggleClass('active');
     $('.mobile-menu').toggleClass('active');
-  });  
+  });
+  
+  // Скролл наверх
+  $(".footer-top-btn").click(function () {
+    $("html, body").animate({
+        scrollTop: 0,
+      },
+      1000
+    );
+  });
 });
