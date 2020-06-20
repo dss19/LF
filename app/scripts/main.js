@@ -6,13 +6,26 @@ $(document).ready(function () {
     navigation: {
       nextEl: '.main-slider-next',
       prevEl: '.main-slider-prev',
-    }
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    autoplay: {
+      delay: 6000,
+    },
+    speed: 1000
   });
 
   // Мобильное меню
   $('.hamburger').click(function () {
     $('.hamburger-menu').toggleClass('active');
     $('.mobile-menu').toggleClass('active');
+  });
+
+  $('.mobile-menu__link-drop').click(function () {
+    $('.mobile-menu__courses').toggleClass('active');
+    $('.mobile-menu__link-drop-icon').toggleClass('active');
   });
   
   // Скролл наверх

@@ -1,6 +1,7 @@
 .main-slider
-  height: 600px
-  position: relative  
+  position: relative
+  .swiper-pagination
+    display: none   
   &__slide
     display: flex
     align-items: center
@@ -36,5 +37,29 @@
     svg
       path
         transition: 0.3s
+
 .swiper-container-main
-  height: 100%                
+  height: 600px
+@media screen and ( max-width: 768px )
+  .main-slider
+    .swiper-pagination
+      display: block
+      width: 100%
+      top: 480px
+      &-bullet
+        background: $white
+        opacity: 0.3
+        margin: 0 4px
+        &-active
+          opacity: 1 
+  .swiper-container-main
+    height: 500px
+  .main-slider-buttons
+    display: none  
+@media screen and ( max-width: 576px )
+  .main-slider
+    .swiper-pagination
+      top: 380px
+  .swiper-container-main
+    height: 400px
+                    

@@ -10,6 +10,7 @@
   transition: 0.3s
   padding: 20px 16px
   overflow-y: auto
+  z-index: 4
   &.active
     transform: translateX(0)
     transition: 0.3s
@@ -24,10 +25,23 @@
     letter-spacing: 1px
     text-transform: uppercase
     color: $brown
+    &-drop
+      position: relative
+      &-icon
+        position: absolute
+        right: 0
+        top: 16px
+        width: 16px
+        height: 16px
+        transition: 0.3s
+        &.active
+          transform: rotate(180deg)
+      &-title
+        color: $red
     &-course
       display: flex
       align-items: center
-      padding: 8px
+      padding: 10px
       color: $brown
       img 
         width: 38px
@@ -51,6 +65,14 @@
     line-height: 30px
     color: $brown
     margin-top: 16px
+  &__courses        
+    opacity: 0    
+    max-height: 0
+    transition: 0.3s
+    &.active
+      padding-top: 16px
+      max-height: 26rem
+      opacity: 1  
 @media screen and ( max-width: 768px )
   .mobile-menu
     width: 100%
