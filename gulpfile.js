@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const sass = require("gulp-sass");
+const pug = require("gulp-pug");
 const cleanCSS = require("gulp-clean-css");
-const htmlmin = require('gulp-htmlmin');
 const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify");
 const babel = require("gulp-babel");
@@ -14,8 +14,8 @@ const plumber = require("gulp-plumber");
 /* Options
  * ------ */
 const options = {
-	html: {
-		src: "app/html/**/*.html",
+	pug: {
+		src: "app/pug/**/*.pug",
 		dest: "public"
 	},
 	scripts: {
@@ -23,12 +23,16 @@ const options = {
 		dest: "public/scripts"
 	},
 	styles: {
-		src: "app/styles/**/*.sass",
-		dest: "public/styles"
+		src: "app/css/**/*.+(sass|scss)",
+		dest: "public/css"
 	},
 	images: {
 		src: "app/images/**/*.+(png|jpeg|jpg|gif|svg)",
 		dest: "public/images"
+	},
+	files: {
+		src: "app/files/**/*.+(png|jpeg|jpg|gif|svg)",
+		dest: "public/files"
 	},
 	fonts: {
 		src: "app/fonts/*",
@@ -111,16 +115,11 @@ function scripts() {
 
 function minify() {
 	return gulp
-		.src(options.html.src)
-		.pipe(htmlmin({
-			collapseWhitespace: true
+		.src(options.pug.src)
+		.pipe(pug({
+			pretty: true
 		}))
-		.pipe(gulp.dest(options.html.dest))
-		.pipe(
-			browsersync.reload({
-				stream: true
-			})
-		);
+		.pipe(gulp.dest(options.pug.dest));
 }
 
 /* Images
@@ -139,6 +138,19 @@ function images() {
 		.pipe(gulp.dest(options.images.dest));
 }
 
+function files() {
+	return gulp
+		.src(options.files.src)
+		.pipe(
+			cache(
+				imagemin({
+					interlaced: true
+				})
+			)
+		)
+		.pipe(gulp.dest(options.files.dest));
+}
+
 /* Fonts
  * ------ */
 
@@ -154,20 +166,21 @@ async function clean() {
 }
 
 function watchFiles() {
-	gulp.watch(options.html.src, minify);
+	gulp.watch(options.pug.src, minify);
 	gulp.watch(options.styles.src, styles);
 	gulp.watch(options.scripts.src, scripts);
 	gulp.watch(options.fonts.src, fonts);
 	gulp.watch(options.images.src, images);
+	gulp.watch(options.files.src, files);
 }
 
 /* Build
  * ------ */
 const build = gulp.series(
 	clean,
-	gulp.parallel(styles, minify, scripts, images, fonts)
+	gulp.parallel(styles, minify, scripts, images, files, fonts)
 );
-const watch = gulp.parallel(watchFiles, browserSync);
+const watch = gulp.series(watchFiles, browserSync);
 // export tasks
 exports.styles = styles;
 exports.minify = minify;

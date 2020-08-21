@@ -1,0 +1,113 @@
+.main-slider
+  position: relative
+  .swiper-pagination
+    display: none   
+  &__slide    
+    +bold
+    color: $white
+    &_first
+      background: #249de3
+      .main-slider__slide-content-img
+        top: 0
+        right: 0
+        width: 500px
+      .main-slider__slide-content-text
+        left: 50%
+        width: 200px
+    &_second
+      background: $pink
+      .main-slider__slide-content-img
+        top: 96px
+        right: 0
+        width: 700px
+      .main-slider__slide-content-text
+        left: 35%
+        width: 250px  
+    &_third
+      background: blue
+    &_thourth
+      background: $red
+    
+    &-content
+      position: relative
+      padding: 70px 0 0 0      
+      &-title
+        text-transform: uppercase
+        font-size: 48px
+        margin-bottom: 30px
+      &-subtitle
+        font-size: 38px
+        line-height: 60px
+        max-width: 50%
+        text-transform: uppercase
+      &-button
+        margin-top: 100px
+        width: 250px
+        height: 60px
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $black
+        background: $beige 
+        font-size: 18px
+        text-transform: uppercase
+        cursor: pointer 
+        border-radius: 4px
+      &-img
+        position: absolute        
+        img 
+          width: 100%
+      &-text
+        position: absolute
+        bottom: 0        
+        +norm
+        font-size: 20px
+        span 
+          +bold
+
+
+  &-buttons
+    display: flex
+    position: absolute
+    bottom: 47px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 2    
+  &-prev, &-next
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 50px
+    height: 50px
+    background: rgba($white, 0.3)
+    outline: none
+    cursor: pointer
+    svg
+      path
+        transition: 0.3s
+
+.swiper-container-main
+  height: 600px
+@media screen and ( max-width: 768px )
+  .main-slider
+    .swiper-pagination
+      display: block
+      width: 100%
+      top: 480px
+      &-bullet
+        background: $white
+        opacity: 0.3
+        margin: 0 4px
+        &-active
+          opacity: 1 
+  .swiper-container-main
+    height: 500px
+  .main-slider-buttons
+    display: none  
+@media screen and ( max-width: 576px )
+  .main-slider
+    .swiper-pagination
+      top: 380px
+  .swiper-container-main
+    height: 400px
+                    

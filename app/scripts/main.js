@@ -11,9 +11,9 @@ $(document).ready(function () {
       el: '.swiper-pagination',
       type: 'bullets',
     },
-    autoplay: {
-      delay: 6000,
-    },
+    // autoplay: {
+    //   delay: 6000,
+    // },
     speed: 1000
   });
 
