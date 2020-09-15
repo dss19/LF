@@ -1,0 +1,42 @@
+.method
+  h1 
+    +bold
+    font-size: 50px
+    line-height: 60px
+  &-about
+    margin: 50px 0
+    p 
+      +norm
+      font-size: 24px
+      line-height: 30px
+      margin-bottom: 30px
+    &-list
+      &-title
+        +bold
+        font-size: 40px
+        line-height: 48px
+        margin-bottom: 30px
+        color: $red
+      &-item
+        display: flex
+        margin-bottom: 50px
+        &-img
+          width: 500px
+          min-width: 500px
+          img 
+            width: 100%
+          &:nth-of-type(even)
+            margin-left: 30px
+          &:nth-of-type(odd)
+            margin-right: 30px
+        &-title
+          +bold 
+          font-size: 30px
+          line-height: 36px
+          margin-bottom: 20px
+        &-text 
+          +norm
+          font-size: 24px
+          line-height: 30px      
+              
+

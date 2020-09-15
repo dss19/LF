@@ -180,7 +180,7 @@ const build = gulp.series(
 	clean,
 	gulp.parallel(styles, minify, scripts, images, files, fonts)
 );
-const watch = gulp.series(watchFiles, browserSync);
+const watch = gulp.parallel(watchFiles, browserSync);
 // export tasks
 exports.styles = styles;
 exports.minify = minify;
